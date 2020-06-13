@@ -12,7 +12,7 @@ public class UnitychanController : MonoBehaviour {
 
     private float dump = 0.8f;
 
-    float jumpVelocity = 20;
+    float jumpVelocity = 23;
 
     private float deadLine = -9;
 
@@ -33,7 +33,7 @@ public class UnitychanController : MonoBehaviour {
 
         this.animator.SetBool("isGround", isGround);
 
-        GetComponent<AudioSource>().volume = (isGround) ? 1 : 0;
+        GetComponent<AudioSource>().volume = (isGround) ? 0.5f : 0;
 
         if (Input.GetMouseButtonDown(0) && isGround)
         {
@@ -54,5 +54,9 @@ public class UnitychanController : MonoBehaviour {
 
             Destroy(gameObject);
         }
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
     }
 }
