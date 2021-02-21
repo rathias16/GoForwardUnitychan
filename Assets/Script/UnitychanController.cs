@@ -35,7 +35,7 @@ public class UnitychanController : MonoBehaviour {
 
         GetComponent<AudioSource>().volume = (isGround) ? 0.5f : 0;
 
-        if (Input.GetMouseButtonDown(0) && isGround)
+        if ( Input.GetMouseButtonDown(0) && isGround)
         {
             this.rigid2D.velocity = new Vector2(0, this.jumpVelocity);
         }

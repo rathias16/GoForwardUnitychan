@@ -21,17 +21,18 @@ public class CubeGenerator : MonoBehaviour {
     private float spaceX = 0.4f;
 
     private int maxBlockNum = 4;
-
+	private UIController ui;
 	// Use this for initialization
 	void Start () {
-		
+		GameObject @object = GameObject.Find("Canvas");
+		ui = @object.GetComponent<UIController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         this.delta += Time.deltaTime;
 
-        if(this.delta > this.span)
+        if(this.delta > this.span && ui.isStarted)
         {
             this.delta = 0;
 
@@ -45,4 +46,5 @@ public class CubeGenerator : MonoBehaviour {
             this.span = this.offsetX + this.spaceX * n;
         }
 	}
+
 }
